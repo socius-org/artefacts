@@ -17,7 +17,6 @@ const IMAGES = {
   lecunDigits: `${base}assets/img/lecun_digits.png`,
   lecunConv: `${base}assets/img/lecun_conv.png`,
   lecunArch: `${base}assets/img/lecun_arch.png`,
-  sociusBanner: `${base}assets/img/socius_banner.jpg`,
 };
 
 const Badge = ({ children, variant = "dark" }) => (
@@ -170,12 +169,6 @@ export default function ArtefactsLeNet() {
               style={{ width: "100%", borderRadius: 3 }} />
           </div>
         </div>
-      </div>
-
-      {/* ═══ SOCIUS GEOMETRIC BANNER ═══ */}
-      <div style={{ background: "#D4F5D4", overflow: "hidden" }}>
-        <img src={IMAGES.sociusBanner} alt="socius labs"
-          style={{ width: "100%", display: "block" }} />
       </div>
 
       {/* ═══ WARM — The Installation ═══ */}
