@@ -72,48 +72,40 @@ export default function ArtefactsLeNet() {
           </div>
         </nav>
 
-        <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "48px 40px 0",
-          display: "grid", gridTemplateColumns: "0.45fr 0.55fr", gap: 40, alignItems: "start",
-        }}>
-          <div>
-            <img src={IMAGES.lecunDigits} alt="Normalised digits from LeCun et al."
-              style={{ width: "100%", mixBlendMode: "multiply" }} />
-          </div>
-          <div style={{ paddingTop: 32 }}>
-            <div style={{ display: "flex", gap: 5, marginBottom: 24 }}>
-              <Badge>Installation</Badge>
-              <Badge variant="green">2026</Badge>
-              <Badge>Interactive</Badge>
-            </div>
-            <h1 style={{
-              fontFamily: "var(--serif)", fontWeight: 400, lineHeight: 1.0,
-              color: "var(--ink)", margin: "0 0 20px",
-            }}>
-              <span style={{ fontSize: 34, fontStyle: "normal", letterSpacing: "-0.01em" }}>artefact(s):</span>
-              <br />
-              <span style={{ fontSize: 72, fontStyle: "italic" }}>LeNet-1</span>
-            </h1>
-            <div style={{ width: 40, height: 1, background: "#D4CEC2", marginBottom: 20 }} />
-            <p style={{
-              fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.75,
-              color: "var(--mid)", fontStyle: "italic", maxWidth: 380,
-            }}>
-              Physicalising the first convolutional neural network in light, glass, and silicon.
-            </p>
-            <div style={{ marginTop: 40 }}>
-              <img src={IMAGES.lecunArch} alt="LeNet architecture diagram"
+        {/* ═══ EDITORIAL CARD HERO ═══ */}
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "48px 40px 0" }}>
+          <div style={{ border: "1px solid #e8e4dd", borderRadius: 4, overflow: "hidden" }}>
+            <div style={{ background: "#F2F0EB", padding: "32px 32px 24px" }}>
+              <img src={IMAGES.frameWireframe} alt="artefact(s): LeNet-1 — full installation"
                 style={{ width: "100%", mixBlendMode: "multiply" }} />
             </div>
-            <div style={{ marginTop: 20 }}>
-              <img src={IMAGES.lecunConv} alt="Convolution and feature map"
-                style={{ width: "100%", mixBlendMode: "multiply" }} />
+            <div style={{ padding: "28px 32px 32px", borderTop: "1px solid #e8e4dd" }}>
+              <div style={{ display: "flex", gap: 5, marginBottom: 20 }}>
+                <Badge>Installation</Badge>
+                <Badge variant="green">2026</Badge>
+                <Badge>Interactive</Badge>
+              </div>
+              <h1 style={{
+                fontFamily: "var(--serif)", fontWeight: 400, lineHeight: 1.0,
+                color: "var(--ink)", margin: "0 0 16px",
+              }}>
+                <span style={{ fontSize: 34, fontStyle: "normal", letterSpacing: "-0.01em" }}>artefact(s):</span>
+                <br />
+                <span style={{ fontSize: 72, fontStyle: "italic" }}>LeNet-1</span>
+              </h1>
+              <p style={{
+                fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.65,
+                color: "var(--mid)", fontStyle: "italic", maxWidth: 400,
+              }}>
+                Physicalising the first convolutional neural network in light, glass, and silicon.
+              </p>
             </div>
           </div>
         </div>
 
+        {/* ═══ Wall label + materials ═══ */}
         <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "64px 40px 64px",
+          maxWidth: 880, margin: "0 auto", padding: "64px 40px 0",
           display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start",
         }}>
           <Prose>
@@ -133,6 +125,12 @@ export default function ArtefactsLeNet() {
             Capacitive stylus input<br />
             Dimensions variable
           </div>
+        </div>
+
+        {/* ── LECUN: Architecture diagram — illustrates the text above ── */}
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "40px 40px 64px" }}>
+          <img src={IMAGES.lecunArch} alt="LeNet architecture diagram"
+            style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
       </div>
 
@@ -179,43 +177,50 @@ export default function ArtefactsLeNet() {
       {/* ═══ WARM — The Installation ═══ */}
       <div style={{ background: "var(--warm)" }}>
 
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px 0" }}>
-          <div style={{ border: "1px solid #e8e4dd", borderRadius: 4, overflow: "hidden" }}>
-            <div style={{ background: "#F2F0EB", padding: "32px 32px 24px" }}>
-              <img src={IMAGES.frameWireframe} alt="artefact(s): LeNet-1 — full installation"
-                style={{ width: "100%", mixBlendMode: "multiply" }} />
-            </div>
+        {/* ── Rotated digits (tall) alongside transition prose ── */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "72px 40px 0",
+          display: "grid", gridTemplateColumns: "0.55fr 0.45fr", gap: 48, alignItems: "start",
+        }}>
+          <div style={{ paddingTop: 8 }}>
+            <Prose maxWidth={420}>
+              artefact(s) rebuilds that architecture in physical space. Each computational
+              layer becomes an array of translucent cubes — mounted to aluminium rails,
+              arranged in the topology of the original network. Visitors draw a digit on a
+              tablet. Every ten seconds, the drawing is captured, normalised, and fed through
+              the physical LeNet. Activation values propagate layer by layer. The network
+              thinks in light.
+            </Prose>
           </div>
+          <img src={IMAGES.lecunDigits} alt="Normalised handwritten digits"
+            style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 64px" }}>
-          <Prose maxWidth={520}>
-            artefact(s) rebuilds that architecture in physical space. Each computational
-            layer becomes an array of translucent cubes — mounted to aluminium rails,
-            arranged in the topology of the original network. Visitors draw a digit on a
-            tablet. Every ten seconds, the drawing is captured, normalised, and fed through
-            the physical LeNet. Activation values propagate layer by layer. The network
-            thinks in light.
-          </Prose>
-        </div>
-
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "0 40px" }}>
+        {/* Isometric */}
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 0" }}>
           <img src={IMAGES.fullIsometric} alt="Isometric view"
             style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 64px" }}>
-          <Prose maxWidth={520}>
+        {/* ── LECUN: Convolution figure alongside neuron prose ── */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "56px 40px 0",
+          display: "grid", gridTemplateColumns: "0.55fr 0.45fr", gap: 48, alignItems: "start",
+        }}>
+          <Prose maxWidth={420}>
             The unit of the installation is the neuron. Each one is a translucent cube
             housing a transparent PCB with a 4×4 matrix of individually addressable LEDs.
             High activation glows bright; low activation dims to near-darkness. Stacked
             and arrayed, the cubes form a physical map of the network's internal state — a
             snapshot of machine perception, renewed every ten seconds.
           </Prose>
+          <img src={IMAGES.lecunConv} alt="Convolution and feature map"
+            style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
+        {/* Layer grid + PCB panel */}
         <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "0 40px",
+          maxWidth: 880, margin: "0 auto", padding: "56px 40px 0",
           display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
         }}>
           <img src={IMAGES.layerGrid} alt="Grid of neuron cubes"
@@ -224,7 +229,7 @@ export default function ArtefactsLeNet() {
             style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 64px" }}>
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 0" }}>
           <Prose maxWidth={520}>
             The structure borrows from the language of server racks and museum vitrines
             in equal measure. Aluminium extrusion rails hold each layer in place;
@@ -235,8 +240,9 @@ export default function ArtefactsLeNet() {
           </Prose>
         </div>
 
+        {/* PCB detail + neuron closeup */}
         <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "0 40px",
+          maxWidth: 880, margin: "0 auto", padding: "56px 40px 0",
           display: "grid", gridTemplateColumns: "1.15fr 0.85fr", gap: 20,
         }}>
           <img src={IMAGES.pcbDetail} alt="PCB detail"
@@ -245,6 +251,7 @@ export default function ArtefactsLeNet() {
             style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
+        {/* Cross-section */}
         <div style={{ maxWidth: 880, margin: "56px auto 0", padding: "0 40px" }}>
           <img src={IMAGES.sideSection} alt="Cross-section"
             style={{ width: "100%", mixBlendMode: "multiply" }} />
