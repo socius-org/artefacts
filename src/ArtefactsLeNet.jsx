@@ -105,7 +105,7 @@ export default function ArtefactsLeNet() {
             fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.12em",
             color: "var(--mute)",
           }}>
-            163 × 80 × 65 cm
+            1.63 × 0.80 × 0.65 m
           </span>
         </div>
 
@@ -129,7 +129,7 @@ export default function ArtefactsLeNet() {
             Aluminium extrusion frame<br />
             Raspberry Pi 4 Model B<br />
             Capacitive stylus input<br />
-            163 × 80 × 65 cm
+            1.63 × 0.80 × 0.65 m
           </div>
         </div>
 
@@ -139,34 +139,60 @@ export default function ArtefactsLeNet() {
             style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
-        {/* ── Installation views triptych ── */}
-        <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "48px 40px 64px",
-          display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16,
-        }}>
-          <img src={IMAGES.frameWireframe} alt="Wireframe view"
-            style={{ width: "100%", borderRadius: 3, mixBlendMode: "multiply" }} />
-          <img src={IMAGES.installationPerspective} alt="Installation perspective view"
-            style={{ width: "100%", borderRadius: 3 }} />
-          <img src={IMAGES.installationSide} alt="Installation side view"
-            style={{ width: "100%", borderRadius: 3 }} />
-        </div>
+        <div style={{ height: 64 }} />
       </div>
 
       {/* ═══ GREY — The Circuit ═══ */}
       <div style={{ background: "var(--grey)", padding: "72px 40px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
           <div style={{
-            fontFamily: "var(--mono)", fontSize: 9.5,
-            letterSpacing: "0.3em", color: "var(--mute)", marginBottom: 16,
-            textTransform: "uppercase",
-          }}>The circuit</div>
-          <Prose maxWidth={480} color="#888">
-            Before light, there is the board. Each neuron's transparent PCB carries
-            sixteen WS2812B LEDs in a 4×4 grid, daisy-chained through a single data
-            line. The circuit is the fossil record of the design process — every trace,
-            every via, every mounting hole a decision made visible.
-          </Prose>
+            display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start",
+          }}>
+            <div>
+              <div style={{
+                fontFamily: "var(--mono)", fontSize: 9.5,
+                letterSpacing: "0.3em", color: "var(--mute)", marginBottom: 16,
+                textTransform: "uppercase",
+              }}>The circuit</div>
+              <Prose maxWidth={420} color="#888">
+                Before light, there is the board. Each neuron's transparent PCB carries
+                sixteen WS2812B LEDs in a 4×4 grid, daisy-chained through a single data
+                line. The circuit is the fossil record of the design process — every trace,
+                every via, every mounting hole a decision made visible.
+              </Prose>
+            </div>
+            <div>
+              <div style={{
+                fontFamily: "var(--mono)", fontSize: 9.5,
+                letterSpacing: "0.3em", color: "var(--mute)", marginBottom: 20,
+                textTransform: "uppercase",
+              }}>Fabrication</div>
+              <div style={{
+                fontFamily: "var(--mono)", fontSize: 10, color: "#999",
+                lineHeight: 2.6,
+              }}>
+                {[
+                  ["Substrate", "Transparent Flex (2-layer)"],
+                  ["Dimensions", "69.4 × 68.775 mm"],
+                  ["Thickness", "0.24 mm"],
+                  ["Copper", "Electro-deposited, 1 oz"],
+                  ["Surface finish", "ENIG (1U\u2033)"],
+                  ["Coverlay", "PET 25 \u03bcm / AD 25 \u03bcm"],
+                  ["Stiffener", "Polyimide, 0.20 mm"],
+                  ["Gold fingers", "0.3 mm"],
+                  ["Cutting", "Laser"],
+                  ["Test", "Flying probe, full"],
+                  ["Tolerance", "\u00b10.1 mm"],
+                  ["Standard", "IPC Class 2"],
+                ].map(([k, v]) => (
+                  <div key={k} style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "var(--mute)" }}>{k}</span>
+                    <span>{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           <div style={{
             display: "grid", gridTemplateColumns: "1.4fr 0.6fr", gap: 16,
             marginTop: 48, alignItems: "start",
@@ -180,9 +206,9 @@ export default function ArtefactsLeNet() {
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 16,
           }}>
             <img src={IMAGES.pcbSchematic} alt="Component placement"
-              style={{ width: "100%", borderRadius: 3 }} />
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 3 }} />
             <img src={IMAGES.pcbLayout} alt="Front copper layer"
-              style={{ width: "100%", borderRadius: 3 }} />
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 3 }} />
           </div>
         </div>
       </div>
@@ -244,12 +270,8 @@ export default function ArtefactsLeNet() {
 
         <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 0" }}>
           <Prose maxWidth={520}>
-            The structure borrows from the language of server racks and museum vitrines
-            in equal measure. Aluminium extrusion rails hold each layer in place;
-            transparent substrates allow sight lines through the full depth of the network.
-            From a distance, the installation reads as a single luminous object. Up close,
-            the individual neurons — their wiring, their standoffs, their tiny circuits —
-            become legible.
+            Aluminium extrusion rails hold each layer in place; transparent substrates
+            allow sight lines through the full depth of the network.
           </Prose>
         </div>
 
@@ -271,6 +293,72 @@ export default function ArtefactsLeNet() {
         </div>
 
         <div style={{ height: 80 }} />
+      </div>
+
+      {/* ═══ DARK — Catalogue plates ═══ */}
+      <div style={{ background: "var(--ink)", padding: "180px 0 180px", overflow: "hidden" }}>
+
+        {/* Wireframe — bleeds left, big */}
+        <div style={{ maxWidth: "85%", paddingRight: 40 }}>
+          <img src={IMAGES.frameWireframe} alt="Wireframe elevation"
+            style={{ width: "100%", mixBlendMode: "lighten" }} />
+        </div>
+
+      </div>
+
+      {/* ═══ Renderings — light background ═══ */}
+      <div style={{ background: "var(--warm)", padding: "180px 0 180px" }}>
+        {/* Perspective — large, pushed left */}
+        <div>
+          <img src={IMAGES.installationPerspective} alt="Perspective view"
+            style={{ width: "82.5%" }} />
+        </div>
+
+        {/* Pull quote */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "160px 40px",
+        }}>
+          <p style={{
+            fontFamily: "var(--serif)", fontSize: 36, fontStyle: "italic",
+            lineHeight: 1.4, color: "var(--ink)", fontWeight: 400,
+            maxWidth: 640,
+          }}>
+            Every ten seconds, a handwritten digit becomes a wave of light propagating through the architecture of perception.
+          </p>
+        </div>
+
+        {/* Gallery installation — centered, large */}
+        <div style={{ display: "flex", justifyContent: "center", padding: "0 40px" }}>
+          <div style={{ width: "90%", position: "relative" }}>
+            <img src={IMAGES.galleryInstallation} alt="Gallery installation"
+              style={{ width: "100%", borderRadius: 3 }} />
+            <div style={{
+              position: "absolute", right: 0, bottom: -80,
+              fontFamily: "var(--mono)", fontSize: 9, color: "var(--mute)",
+              lineHeight: 2, textAlign: "right",
+            }}>
+              <span style={{ fontStyle: "italic" }}>artefact(s): LeNet-1</span><br />
+              socius labs (Nick Oh &amp; Alex Park), 2026<br />
+              Transparent flexible PCBs, LEDs, glass, PLA, aluminium, electronics<br />
+              1.63 × 0.80 × 0.65 m
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ DARK — Creators ═══ */}
+      <div style={{ background: "var(--ink)", padding: "64px 40px" }}>
+        <div style={{ maxWidth: 880, margin: "0 auto" }}>
+          <div style={{
+            fontFamily: "var(--mono)", fontSize: 10,
+            letterSpacing: "0.2em", color: "#555", marginBottom: 14,
+          }}>CREATORS</div>
+          <div style={{
+            fontFamily: "var(--mono)", fontSize: 10, color: "#777", lineHeight: 2.4,
+          }}>
+            Nick Oh<br />Alex Park
+          </div>
+        </div>
       </div>
 
     </div>
