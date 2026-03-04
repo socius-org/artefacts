@@ -17,6 +17,9 @@ const IMAGES = {
   lecunDigits: `${base}assets/img/lecun_digits.png`,
   lecunConv: `${base}assets/img/lecun_conv.png`,
   lecunArch: `${base}assets/img/lecun_arch.png`,
+  galleryInstallation: `${base}assets/img/gallery_installation.png`,
+  installationPerspective: `${base}assets/img/installation_perspective.png`,
+  installationSide: `${base}assets/img/installation_side.png`,
 };
 
 const Badge = ({ children, variant = "dark" }) => (
@@ -62,23 +65,12 @@ export default function ArtefactsLeNet() {
       {/* ═══ WARM — Opening ═══ */}
       <div style={{ background: "var(--warm)" }}>
 
-        <nav style={{
-          padding: "16px 40px", display: "flex", justifyContent: "space-between",
-          alignItems: "center", borderBottom: "1px solid #e8e4dd",
-          fontFamily: "var(--mono)", fontSize: 11,
-        }}>
-          <a href="https://socius.org" style={{ letterSpacing: "0.05em", color: "var(--ink)" }}>⊞ socius labs</a>
-          <div style={{ display: "flex", gap: 24, color: "#bbb", fontSize: 10.5 }}>
-            <a href="#">About</a><a href="#">Research</a><a href="#">Data</a><a href="#">Documentation</a>
-          </div>
-        </nav>
-
         {/* ═══ EDITORIAL CARD HERO ═══ */}
         <div style={{ maxWidth: 880, margin: "0 auto", padding: "48px 40px 0" }}>
           <div style={{ border: "1px solid #e8e4dd", borderRadius: 4, overflow: "hidden" }}>
             <div style={{ background: "#F2F0EB", padding: "32px 32px 24px" }}>
-              <img src={IMAGES.frameWireframe} alt="artefact(s): LeNet-1 — full installation"
-                style={{ width: "100%", mixBlendMode: "multiply" }} />
+              <img src={IMAGES.galleryInstallation} alt="artefact(s): LeNet-1 — gallery installation"
+                style={{ width: "100%", borderRadius: 2 }} />
             </div>
             <div style={{ padding: "28px 32px 32px", borderTop: "1px solid #e8e4dd" }}>
               <div style={{ display: "flex", gap: 5, marginBottom: 20 }}>
@@ -104,6 +96,19 @@ export default function ArtefactsLeNet() {
           </div>
         </div>
 
+        {/* ═══ Dimensions ═══ */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "28px 40px 0",
+          textAlign: "center",
+        }}>
+          <span style={{
+            fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.12em",
+            color: "var(--mute)",
+          }}>
+            163 × 80 × 65 cm
+          </span>
+        </div>
+
         {/* ═══ Wall label + materials ═══ */}
         <div style={{
           maxWidth: 880, margin: "0 auto", padding: "64px 40px 0",
@@ -124,14 +129,27 @@ export default function ArtefactsLeNet() {
             Aluminium extrusion frame<br />
             Raspberry Pi 4 Model B<br />
             Capacitive stylus input<br />
-            Dimensions variable
+            163 × 80 × 65 cm
           </div>
         </div>
 
         {/* ── LECUN: Architecture diagram — illustrates the text above ── */}
-        <div style={{ maxWidth: 880, margin: "0 auto", padding: "40px 40px 64px" }}>
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "40px 40px 0" }}>
           <img src={IMAGES.lecunArch} alt="LeNet architecture diagram"
             style={{ width: "100%", mixBlendMode: "multiply" }} />
+        </div>
+
+        {/* ── Installation views triptych ── */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "48px 40px 64px",
+          display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16,
+        }}>
+          <img src={IMAGES.frameWireframe} alt="Wireframe view"
+            style={{ width: "100%", borderRadius: 3, mixBlendMode: "multiply" }} />
+          <img src={IMAGES.installationPerspective} alt="Installation perspective view"
+            style={{ width: "100%", borderRadius: 3 }} />
+          <img src={IMAGES.installationSide} alt="Installation side view"
+            style={{ width: "100%", borderRadius: 3 }} />
         </div>
       </div>
 
@@ -255,56 +273,6 @@ export default function ArtefactsLeNet() {
         <div style={{ height: 80 }} />
       </div>
 
-      {/* ═══ DARK — Colophon + Footer ═══ */}
-      <div style={{ background: "var(--ink)", padding: "64px 40px" }}>
-        <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <div style={{
-            fontFamily: "var(--mono)", fontSize: 10,
-            letterSpacing: "0.2em", color: "#555", marginBottom: 14,
-          }}>CREATORS</div>
-          <div style={{
-            fontFamily: "var(--mono)", fontSize: 10, color: "#777", lineHeight: 2.4,
-          }}>
-            Nick Oh<br />Alex Park
-          </div>
-        </div>
-      </div>
-
-      <footer style={{ background: "#0A0A0A", padding: "48px 40px 40px" }}>
-        <div style={{
-          maxWidth: 880, margin: "0 auto",
-          display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 32,
-          fontFamily: "var(--mono)", fontSize: 10, color: "#555",
-        }}>
-          <div>
-            <div style={{ color: "#777", marginBottom: 10, letterSpacing: "0.08em" }}>⊞ socius labs</div>
-            <div style={{ lineHeight: 2 }}>Experimental<br />Intelligence Lab</div>
-          </div>
-          <div>
-            <div style={{ color: "#555", marginBottom: 10, letterSpacing: "0.15em" }}>SOCIALS</div>
-            <div style={{ lineHeight: 2 }}>GitHub<br />LinkedIn<br />Instagram</div>
-          </div>
-          <div>
-            <div style={{ color: "#555", marginBottom: 10, letterSpacing: "0.15em" }}>NAVIGATION</div>
-            <div style={{ lineHeight: 2 }}>Home<br />About<br />Research<br />Data<br />Documentation</div>
-          </div>
-          <div>
-            <div style={{ color: "#555", marginBottom: 10, letterSpacing: "0.15em" }}>DESIGNED BY</div>
-            <div style={{ lineHeight: 2 }}>Thomas Bagg<br />Anthony Odu</div>
-          </div>
-        </div>
-        <div style={{
-          maxWidth: 880, margin: "56px auto 0", height: 80, overflow: "hidden",
-          display: "flex", alignItems: "center", gap: 8, opacity: 0.06,
-        }}>
-          {"artefact(s)".split("").map((c, i) => (
-            <span key={i} style={{
-              fontFamily: "var(--serif)", fontSize: 130, fontWeight: 500,
-              color: "#fff", lineHeight: 0.85,
-            }}>{c}</span>
-          ))}
-        </div>
-      </footer>
     </div>
   );
 }
