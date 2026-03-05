@@ -96,19 +96,6 @@ export default function ArtefactsLeNet() {
           </div>
         </div>
 
-        {/* ═══ Dimensions ═══ */}
-        <div style={{
-          maxWidth: 880, margin: "0 auto", padding: "28px 40px 0",
-          textAlign: "center",
-        }}>
-          <span style={{
-            fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.12em",
-            color: "var(--mute)",
-          }}>
-            1.63 × 0.80 × 0.65 m
-          </span>
-        </div>
-
         {/* ═══ Wall label + materials ═══ */}
         <div style={{
           maxWidth: 880, margin: "0 auto", padding: "64px 40px 0",
@@ -295,23 +282,23 @@ export default function ArtefactsLeNet() {
         <div style={{ height: 80 }} />
       </div>
 
-      {/* ═══ DARK — Catalogue plates ═══ */}
-      <div style={{ background: "var(--ink)", padding: "180px 0 180px", overflow: "hidden" }}>
+      {/* ═══ Catalogue plates — Wireframe ═══ */}
+      <div style={{ background: "var(--grey)", padding: "240px 0 240px", overflow: "hidden" }}>
 
-        {/* Wireframe — bleeds left, big */}
-        <div style={{ maxWidth: "85%", paddingRight: 40 }}>
+        {/* Wireframe — centered, large */}
+        <div style={{ maxWidth: "85%", margin: "0 auto" }}>
           <img src={IMAGES.frameWireframe} alt="Wireframe elevation"
-            style={{ width: "100%", mixBlendMode: "lighten" }} />
+            style={{ width: "100%", mixBlendMode: "multiply" }} />
         </div>
 
       </div>
 
       {/* ═══ Renderings — light background ═══ */}
-      <div style={{ background: "var(--warm)", padding: "180px 0 180px" }}>
-        {/* Perspective — large, pushed left */}
+      <div style={{ background: "var(--warm)", padding: "240px 0 240px" }}>
+        {/* Perspective — full width */}
         <div>
           <img src={IMAGES.installationPerspective} alt="Perspective view"
-            style={{ width: "82.5%" }} />
+            style={{ width: "100%" }} />
         </div>
 
         {/* Pull quote */}
@@ -346,20 +333,6 @@ export default function ArtefactsLeNet() {
         </div>
       </div>
 
-      {/* ═══ DARK — Creators ═══ */}
-      <div style={{ background: "var(--ink)", padding: "64px 40px" }}>
-        <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <div style={{
-            fontFamily: "var(--mono)", fontSize: 10,
-            letterSpacing: "0.2em", color: "#555", marginBottom: 14,
-          }}>CREATORS</div>
-          <div style={{
-            fontFamily: "var(--mono)", fontSize: 10, color: "#777", lineHeight: 2.4,
-          }}>
-            Nick Oh<br />Alex Park
-          </div>
-        </div>
-      </div>
 
     </div>
   );
