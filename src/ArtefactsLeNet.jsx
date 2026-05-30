@@ -17,7 +17,14 @@ const IMAGES = {
   lecunDigits: `${base}assets/img/lecun_digits.png`,
   lecunConv: `${base}assets/img/lecun_conv.png`,
   lecunArch: `${base}assets/img/lecun_arch.png`,
-  galleryInstallation: `${base}assets/img/gallery_installation.png`,
+  galleryInstallation: `${base}assets/img/artefacts-lenet1.png`,
+  sociusLogo: `${base}assets/img/sociuslabs_logo.png`,
+  installationVideo: `${base}assets/video/artefacts-lenet1.mp4`,
+  sponsorJlcpcb: `${base}assets/sponsors/jlcpcb.jpg`,
+  sponsorJlc3dp: `${base}assets/sponsors/jlc3dp.jpg`,
+  sponsorJlcmc: `${base}assets/sponsors/jlcmc.jpg`,
+  sponsorEasyeda: `${base}assets/sponsors/easyeda.jpg`,
+  cvprLogo: `${base}assets/exhibitions/CVPR_Logo_Denver-2026-white.png`,
   installationPerspective: `${base}assets/img/installation_perspective.png`,
   installationSide: `${base}assets/img/installation_side.png`,
 };
@@ -60,10 +67,35 @@ export default function ArtefactsLeNet() {
         * { box-sizing: border-box; margin: 0; }
         img { display: block; max-width: 100%; }
         a { color: inherit; text-decoration: none; }
+        .sponsor-logo {
+          filter: grayscale(1); opacity: 0.5; mix-blend-mode: multiply;
+          transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        .sponsor-logo:hover { filter: grayscale(0); opacity: 1; }
+        .venue-logo {
+          filter: invert(1); opacity: 0.6;
+          transition: opacity 0.3s ease;
+        }
+        .venue-logo:hover { opacity: 1; }
       `}</style>
 
       {/* ═══ WARM — Opening ═══ */}
       <div style={{ background: "var(--warm)" }}>
+
+        {/* ═══ Presents banner ═══ */}
+        <div style={{
+          maxWidth: 880, margin: "0 auto", padding: "44px 40px 0",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 14,
+        }}>
+          <a href="https://socius.org" target="_blank" rel="noopener noreferrer">
+            <img src={IMAGES.sociusLogo} alt="socius labs"
+              style={{ height: 26, width: "auto" }} />
+          </a>
+          <span style={{
+            fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.4em",
+            textTransform: "uppercase", color: "var(--mute)",
+          }}>presents</span>
+        </div>
 
         {/* ═══ EDITORIAL CARD HERO ═══ */}
         <div style={{ maxWidth: 880, margin: "0 auto", padding: "48px 40px 0" }}>
@@ -80,18 +112,12 @@ export default function ArtefactsLeNet() {
               </div>
               <h1 style={{
                 fontFamily: "var(--serif)", fontWeight: 400, lineHeight: 1.0,
-                color: "var(--ink)", margin: "0 0 16px",
+                color: "var(--ink)", margin: 0,
               }}>
                 <span style={{ fontSize: 34, fontStyle: "normal", letterSpacing: "-0.01em" }}>artefact(s):</span>
                 <br />
                 <span style={{ fontSize: 72, fontStyle: "italic" }}>LeNet-1</span>
               </h1>
-              <p style={{
-                fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.65,
-                color: "var(--mid)", fontStyle: "italic", maxWidth: 400,
-              }}>
-                Physicalising the first convolutional neural network in light, glass, and silicon.
-              </p>
             </div>
           </div>
         </div>
@@ -102,20 +128,21 @@ export default function ArtefactsLeNet() {
           display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start",
         }}>
           <Prose>
-            In 1989, Yann LeCun demonstrated that a machine could learn to see.
-            LeNet-1 — the first convolutional neural network — extracted edges,
-            curves, and strokes from raw pixel data, compressing and recombining
-            features until a handwritten digit became a classification. It was a
-            quiet revolution, buried in a Bell Labs technical report.
+            LeNet-1, the first convolutional neural network, was built at Bell Labs in 1989
+            to read handwritten digits. The code still runs, so it remains a working
+            instrument. But the meaning has shifted under it. What was once a state-of-the-art
+            system is now a precursor, an origin story, an artefact in the archaeological sense
+            rather than the software one.
           </Prose>
           <div style={{
             fontFamily: "var(--mono)", fontSize: 10, color: "var(--mute)", lineHeight: 2.4,
           }}>
             Transparent PCBs, WS2812B LEDs<br />
-            3D-printed translucent PLA<br />
+            Low-iron tempered glass<br />
+            SLA-9600 Resin<br />
+            SLA-8001 Resin<br />
             Aluminium extrusion frame<br />
             Raspberry Pi 4 Model B<br />
-            Capacitive stylus input<br />
             1.63 × 0.80 × 0.65 m
           </div>
         </div>
@@ -142,10 +169,9 @@ export default function ArtefactsLeNet() {
                 textTransform: "uppercase",
               }}>The circuit</div>
               <Prose maxWidth={420} color="#888">
-                Before light, there is the board. Each neuron's transparent PCB carries
-                sixteen WS2812B LEDs in a 4×4 grid, daisy-chained through a single data
-                line. The circuit is the fossil record of the design process — every trace,
-                every via, every mounting hole a decision made visible.
+                We allowed ourselves one translation only, of substrate, bits to atoms. The
+                computation stays exact. Where the paper has matrices, we have copper, and
+                where it has scalar activations, we have brightness.
               </Prose>
             </div>
             <div>
@@ -210,12 +236,10 @@ export default function ArtefactsLeNet() {
         }}>
           <div style={{ paddingTop: 8 }}>
             <Prose maxWidth={420}>
-              artefact(s) rebuilds that architecture in physical space. Each computational
-              layer becomes an array of translucent cubes — mounted to aluminium rails,
-              arranged in the topology of the original network. Visitors draw a digit on a
-              tablet. Every ten seconds, the drawing is captured, normalised, and fed through
-              the physical LeNet. Activation values propagate layer by layer. The network
-              thinks in light.
+              Where the paper has a topology diagram, the installation has spatial depth,
+              something you can walk around, rebuilt layer for layer in the order of the
+              original network. It runs continuously. Every ten seconds a handwritten digit
+              is fed in, normalised, and propagated layer by layer through the physical LeNet.
             </Prose>
           </div>
           <img src={IMAGES.lecunDigits} alt="Normalised handwritten digits"
@@ -234,11 +258,11 @@ export default function ArtefactsLeNet() {
           display: "grid", gridTemplateColumns: "0.55fr 0.45fr", gap: 48, alignItems: "start",
         }}>
           <Prose maxWidth={420}>
-            The unit of the installation is the neuron. Each one is a translucent cube
-            housing a transparent PCB with a 4×4 matrix of individually addressable LEDs.
-            High activation glows bright; low activation dims to near-darkness. Stacked
-            and arrayed, the cubes form a physical map of the network's internal state — a
-            snapshot of machine perception, renewed every ten seconds.
+            The unit of the installation is the neuron, a glass housing around a transparent
+            PCB and its 4×4 matrix of LEDs. This is the network's smallest unit of seeing, the
+            size of its most compressed feature map after the final pooling. High activation
+            glows; low activation falls to near-dark. Arrayed across the frame, the cubes hold
+            a snapshot of machine perception, renewed every ten seconds.
           </Prose>
           <img src={IMAGES.lecunConv} alt="Convolution and feature map"
             style={{ width: "100%", mixBlendMode: "multiply" }} />
@@ -257,8 +281,9 @@ export default function ArtefactsLeNet() {
 
         <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 0" }}>
           <Prose maxWidth={520}>
-            Aluminium extrusion rails hold each layer in place; transparent substrates
-            allow sight lines through the full depth of the network.
+            Aluminium rails hold each layer; transparent substrates open sight lines through
+            the full depth of the network. You can see every component, every trace, every
+            connector, and still you cannot see why a seven is read as a one.
           </Prose>
         </div>
 
@@ -310,25 +335,68 @@ export default function ArtefactsLeNet() {
             lineHeight: 1.4, color: "var(--ink)", fontWeight: 400,
             maxWidth: 640,
           }}>
-            Every ten seconds, a handwritten digit becomes a wave of light propagating through the architecture of perception.
+            We wanted to see how LeNet-1 thinks.<br />Not to explain it, only to watch it.
           </p>
         </div>
 
-        {/* Gallery installation — centered, large */}
+        {/* Installation video — centered, large, with artwork label */}
         <div style={{ display: "flex", justifyContent: "center", padding: "0 40px" }}>
-          <div style={{ width: "90%", position: "relative" }}>
-            <img src={IMAGES.galleryInstallation} alt="Gallery installation"
-              style={{ width: "100%", borderRadius: 3 }} />
+          <div style={{ width: "90%" }}>
+            <video
+              src={IMAGES.installationVideo}
+              autoPlay loop muted playsInline
+              style={{ width: "100%", borderRadius: 3, display: "block" }}
+            />
             <div style={{
-              position: "absolute", right: 0, bottom: -80,
+              marginTop: 24,
               fontFamily: "var(--mono)", fontSize: 9, color: "var(--mute)",
               lineHeight: 2, textAlign: "right",
             }}>
               <span style={{ fontStyle: "italic" }}>artefact(s): LeNet-1</span><br />
               socius labs (Nick Oh &amp; Alex Park), 2026<br />
-              Transparent flexible PCBs, LEDs, glass, PLA, aluminium, electronics<br />
+              Transparent flexible PCBs, WS2812B LEDs, low-iron tempered glass, SLA resin, aluminium, electronics<br />
               1.63 × 0.80 × 0.65 m
             </div>
+          </div>
+        </div>
+
+        {/* ═══ Exhibited at — venue ═══ */}
+        <div style={{ maxWidth: 880, margin: "220px auto 0", padding: "0 40px", textAlign: "center" }}>
+          <div style={{
+            fontFamily: "var(--mono)", fontSize: 9.5, letterSpacing: "0.3em",
+            textTransform: "uppercase", color: "var(--mute)", marginBottom: 28,
+          }}>Exhibited at</div>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <a href="https://thecvf-art.com/project.php?year=2026&artist=nick-oh&id=992"
+              target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex" }}>
+              <img src={IMAGES.cvprLogo} alt="CVPR 2026, Denver" className="venue-logo"
+                style={{ height: 30, width: "auto", objectFit: "contain" }} />
+            </a>
+          </div>
+        </div>
+
+        {/* ═══ Supported by — sponsors ═══ */}
+        <div style={{ maxWidth: 880, margin: "72px auto 0", padding: "0 40px", textAlign: "center" }}>
+          <div style={{
+            fontFamily: "var(--mono)", fontSize: 9.5, letterSpacing: "0.3em",
+            textTransform: "uppercase", color: "var(--mute)", marginBottom: 32,
+          }}>Supported by</div>
+          <div style={{
+            display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center",
+            gap: 48,
+          }}>
+            {[
+              [IMAGES.sponsorJlcpcb, "JLCPCB", "https://jlcpcb.com"],
+              [IMAGES.sponsorJlc3dp, "JLC3DP", "https://jlc3dp.com/"],
+              [IMAGES.sponsorJlcmc, "JLCMC", "https://jlcmc.com/"],
+              [IMAGES.sponsorEasyeda, "EasyEDA", "https://easyeda.com/"],
+            ].map(([src, name, href]) => (
+              <a key={name} href={href} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-flex" }}>
+                <img src={src} alt={name} className="sponsor-logo"
+                  style={{ height: 34, width: "auto", objectFit: "contain" }} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
