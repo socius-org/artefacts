@@ -39,18 +39,18 @@ const SOCIALS = [
 // set, the page runs in DEMO mode and won't post anything.
 const GOOGLE_FORM = {
   // …/forms/d/e/FORM_ID/formResponse  (note: formResponse, not viewform)
-  actionUrl: "https://docs.google.com/forms/d/e/REPLACE_FORM_ID/formResponse",
+  actionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeW4PqyGr85zC6uUZq4eaKAGyQmaKaieqa0_AHPx92PIcDhJQ/formResponse",
   fields: {
-    email: "entry.REPLACE_EMAIL",
-    name: "entry.REPLACE_NAME",
-    linkedin: "entry.REPLACE_LINKEDIN",
-    instagram: "entry.REPLACE_INSTAGRAM",
-    x: "entry.REPLACE_X",
+    email: "entry.873745117",
+    name: "entry.1527757242",
+    linkedin: "entry.1544376775",
+    instagram: "entry.1243062379",
+    x: "entry.1402561092",
     // A checkbox question in the Form with exactly this option text:
-    consent: "entry.REPLACE_CONSENT",
+    consent: "entry.1647097983",
   },
   // Must match the checkbox option text in your Google Form, character for character.
-  consentValue: "I agree to be contacted about the prize draw.",
+  consentValue: "Yes",
 };
 
 const isConfigured = !GOOGLE_FORM.actionUrl.includes("REPLACE_FORM_ID");
