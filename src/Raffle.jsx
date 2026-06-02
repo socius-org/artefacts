@@ -19,15 +19,15 @@ const SOCIALS = [
   {
     key: "instagram",
     label: "Instagram",
-    handle: "@sociuslabs",
-    url: "https://www.instagram.com/sociuslabs/",
+    handle: "@socius.labs",
+    url: "https://www.instagram.com/socius.labs",
     placeholder: "@your-instagram",
   },
   {
     key: "x",
     label: "X",
-    handle: "@sociuslabs",
-    url: "https://x.com/sociuslabs",
+    handle: "@socius_labs",
+    url: "https://x.com/socius_labs",
     placeholder: "@your-x-handle",
   },
 ];
