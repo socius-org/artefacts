@@ -122,6 +122,45 @@ export default function ArtefactsLeNet() {
           </div>
         </div>
 
+        {/* ═══ Prize-draw CTA band ═══ */}
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "56px 40px 0" }}>
+          <div style={{
+            background: "var(--ink)", borderRadius: 4, padding: "52px 40px",
+            display: "flex", flexDirection: "column", alignItems: "center",
+            textAlign: "center", gap: 20,
+          }}>
+            <div style={{ display: "flex", gap: 5 }}>
+              <Badge variant="green">CVPR 2026</Badge>
+              <Badge variant="green">Win a prize</Badge>
+            </div>
+            <h2 style={{
+              fontFamily: "var(--serif)", fontWeight: 400, fontStyle: "italic",
+              fontSize: 38, color: "#fff", lineHeight: 1.1, margin: 0,
+            }}>
+              Follow us, enter the draw
+            </h2>
+            <p style={{
+              fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.9,
+              color: "#bbb", maxWidth: 460, margin: 0,
+            }}>
+              Visiting the installation at CVPR 2026? Follow <span style={{ fontStyle: "italic" }}>socius
+              labs</span> on LinkedIn, Instagram, or X and leave your handle to enter our prize draw.
+            </p>
+            <a
+              href={`${base}raffle.html`}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 10, marginTop: 8,
+                padding: "16px 28px", background: "#4ADE80", color: "#0a1a0f",
+                borderRadius: 3, fontFamily: "var(--mono)", fontSize: 13,
+                letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500,
+              }}
+            >
+              Enter the prize draw
+              <span style={{ fontSize: 15, lineHeight: 1 }}>→</span>
+            </a>
+          </div>
+        </div>
+
         {/* ═══ Wall label + materials ═══ */}
         <div style={{
           maxWidth: 880, margin: "0 auto", padding: "64px 40px 0",
