@@ -168,6 +168,25 @@ export default function Raffle() {
           }}>Prize Draw</span>
         </div>
 
+        {/* ── Prize image — what you can win ── */}
+        <figure style={{
+          border: "1px solid #e8e4dd", borderRadius: 4, background: "#fff",
+          padding: 12, marginBottom: 28,
+        }}>
+          <img
+            src={`${base}assets/img/raffle_prize.PNG`}
+            alt="artefact(s): LeNet-1 — the prize"
+            style={{ width: "100%", height: "auto", borderRadius: 2 }}
+          />
+          <figcaption style={{
+            fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.16em",
+            textTransform: "uppercase", color: "var(--mute)", textAlign: "center",
+            paddingTop: 14, paddingBottom: 4,
+          }}>
+            The prize — <span style={{ fontStyle: "italic", textTransform: "none", letterSpacing: 0 }}>a 4×4 LED matrix</span>
+          </figcaption>
+        </figure>
+
         {status === "done" ? (
           /* ── Success state ── */
           <div style={{
