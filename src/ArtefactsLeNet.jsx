@@ -42,7 +42,7 @@ const Badge = ({ children, variant = "dark" }) => (
 const Prose = ({ children, maxWidth = 440, color = "#666" }) => (
   <p style={{
     fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.95,
-    color, fontStyle: "italic", maxWidth,
+    color, fontStyle: "normal", maxWidth,
   }}>{children}</p>
 );
 
@@ -56,11 +56,11 @@ export default function ArtefactsLeNet() {
       opacity: loaded ? 1 : 0, transition: "opacity 1s ease",
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..700&display=swap');
         :root {
-          --serif: 'Playfair Display', Georgia, serif;
-          --body: 'Source Serif 4', Georgia, serif;
-          --mono: 'DM Mono', monospace;
+          --serif: 'Rethink Sans', sans-serif;
+          --body: 'Rethink Sans', sans-serif;
+          --mono: 'Rethink Sans', sans-serif;
           --ink: #1a1a1a; --mute: #BBB4A8; --mid: #888;
           --warm: #F8F7F4; --grey: #EDEAE5;
         }
@@ -111,12 +111,12 @@ export default function ArtefactsLeNet() {
                 <Badge>Interactive</Badge>
               </div>
               <h1 style={{
-                fontFamily: "var(--serif)", fontWeight: 400, lineHeight: 1.0,
+                fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, lineHeight: 1.0,
                 color: "var(--ink)", margin: 0,
               }}>
                 <span style={{ fontSize: 34, fontStyle: "normal", letterSpacing: "-0.01em" }}>artefact(s):</span>
                 <br />
-                <span style={{ fontSize: 72, fontStyle: "italic" }}>LeNet-1</span>
+                <span style={{ fontSize: 72, fontStyle: "normal" }}>LeNet-1</span>
               </h1>
             </div>
           </div>
@@ -331,9 +331,9 @@ export default function ArtefactsLeNet() {
           maxWidth: 880, margin: "0 auto", padding: "160px 40px",
         }}>
           <p style={{
-            fontFamily: "var(--serif)", fontSize: 36, fontStyle: "italic",
+            fontFamily: "'Rethink Sans', sans-serif", fontSize: 36, fontStyle: "italic",
             lineHeight: 1.4, color: "var(--ink)", fontWeight: 400,
-            maxWidth: 640,
+            maxWidth: 800,
           }}>
             We wanted to see how LeNet-1 thinks.<br />Not to explain it, only to watch it.
           </p>
